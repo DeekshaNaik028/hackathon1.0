@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindfulMe - Your Mental Health Companion</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/10/19/16/20241019163251-FN4GU48M.json"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2024/10/19/16/20241019163251-SCT959RH.js"></script> 
-    <script src="botpress-chat.js" defer></script> 
-</head>
+   </head>
 <body>
     <div class="container">
         <!-- Sidebar Navigation -->
@@ -38,11 +33,11 @@
                     <i class="fas fa-heart"></i>
                     <span>Exercises</span>
                 </li>
-                <div class="res">
-                    <li data-page="resources">
+                <div class="res"><a href="resources.html" id="uline">
+                    
                         <i class="fas fa-book-medical"></i>
                         <span>Resources</span>
-                    </li>
+                    </a>
                 </div>
                 
             </ul>
@@ -123,7 +118,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <div id="chat" class="section page">
+                    <!-- <div id="chat" class="section page">
                         <div class="chat-section">
                           <h2>Chat Support</h2>
                           <div class="chat-container">
@@ -141,7 +136,7 @@
                 </div>
         
                 <script src="botpress-chat.js"></script>
-            </section> 
+            </section>  -->
 
             <!-- Mood Tracker Page -->
             <section id="mood-tracker" class="page">
@@ -193,42 +188,7 @@
             </section>
         </main>
     </div>
-<!-- </div>
-</div> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Initialize Botpress with custom configuration
-        window.botpressWebChat.init({
-            // Custom configuration for integrated view
-            containerEl: document.getElementById('chat-container'),
-            hideWidget: true, // Hide the default floating button
-            disableAnimations: true,
-            showConversationDescription: false,
-            showUserAvatar: false,
-            enableReset: false,
-            enableTranscriptDownload: false,
-            enableConversationDeletion: false,
-            stylesheet: `
-                :root {
-                    --main-bg-color: transparent;
-                    --chat-bg-color: transparent;
-                    --chat-border-color: transparent;
-                }
-                .bpw-layout {
-                    width: 100% !important;
-                    height: 100% !important;
-                    border-radius: 8px !important;
-                }
-                .bpw-header-container {
-                    border-top-left-radius: 8px !important;
-                    border-top-right-radius: 8px !important;
-                }
-                .bpw-date-container {
-                    background: transparent !important;
-                }
-            `
-        });
-    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2024/10/19/16/20241019163251-SCT959RH.js"></script>
 </body>
 </html>

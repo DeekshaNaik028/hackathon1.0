@@ -3,34 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Scan Exercise</title>
+    <title>Tutorial</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="exercise-style.css">
 </head>
-<body class="bodyscan">
+<body>
     <div class="container">
         <div class="content">
-            <h1 id="exercise-title">10-Minute Bodyscan Exercise</h1>
+            <h1 id="exercise-title">Tutorial</h1>
             <div id="exercise-container">
-                <div id="timer-container">
-                    <svg width="200" height="200" viewBox="0 0 200 200">
-                        <circle cx="100" cy="100" r="90" fill="none" stroke="#e0e0e0" stroke-width="10"/>
-                        <circle cx="100" cy="100" r="90" fill="none" stroke="#3498db" stroke-width="10" 
-                                stroke-dasharray="565.48" stroke-dashoffset="565.48" id="timer-circle"/>
-                        <text x="100" y="100" text-anchor="middle" dominant-baseline="central" 
-                              font-size="36" id="timer-text">10:00</text>
-                        
-                    </svg>
+          
+                <div id="video-container">
+                    <iframe width="480" height="244" src="https://www.youtube.com/embed/inpok4MKVLM?si=TNSs2DrSX5phXch8" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
                 </div>
                 <p id="instruction">Prepare to begin...</p>
                 <button id="start-button">Start Exercise</button>
             </div>
         </div>
     </div>
-    <script src="exercise-timer.js"></script>
-</body>
-<html>
-<div>
+
     <script>
         const instructions = [
             "Focus on your feet and toes. Notice any sensations.",
@@ -43,40 +36,18 @@
             "Be aware of your whole body. Feel the sensations."
         ];
         let currentStep = 0;
-        let timeLeft = 600; // 10 minutes in seconds
-        let intervalId;
 
-        document.getElementById('start-btn').addEventListener('click', startExercise);
+        document.getElementById('start-button').addEventListener('click', startExercise);
 
         function startExercise() {
-            document.getElementById('start-btn').style.display = 'none';
+            document.getElementById('start-button').style.display = 'none';
             updateInstruction();
-            intervalId = setInterval(updateTimer, 1000);
         }
 
         function updateInstruction() {
             document.getElementById('instruction').textContent = instructions[currentStep];
             currentStep = (currentStep + 1) % instructions.length;
         }
-
-        function updateTimer() {
-            timeLeft--;
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            document.getElementById('timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-            if (timeLeft % 75 === 0) { // Change instruction every 75 seconds
-                updateInstruction();
-            }
-
-            if (timeLeft === 0) {
-                clearInterval(intervalId);
-                document.getElementById('instruction').textContent = "Exercise complete!";
-                document.getElementById('start-btn').style.display = 'block';
-                document.getElementById('start-btn').textContent = 'Restart Exercise';
-            }
-        }
     </script>
-</div>
 </body>
 </html>
