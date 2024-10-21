@@ -70,10 +70,15 @@ body {
 .res{
     
     color: black;
+    top: 40px;
+    background-color: #d1e496;
+    color: black;
+    text-align: center;
+    padding: 1.75rem;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
 }
-.res :hover{
-    color: white;
-}
+
     
 
 .nav-links li {
