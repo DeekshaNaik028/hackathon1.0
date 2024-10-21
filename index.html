@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindfulMe - Your Mental Health Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/10/19/16/20241019163251-FN4GU48M.json"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2024/10/19/16/20241019163251-SCT959RH.js"></script> 
+    <script src="botpress-chat.js" defer></script> 
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="profile">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <p>Welcome back</p>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </li>
+                <li data-page="mood-tracker">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Mood Tracker</span>
+                </li>
+                <li data-page="chat">
+                    <i class="fas fa-comments"></i>
+                    <span>Chat Support</span>
+                </li>
+                <li data-page="exercises">
+                    <i class="fas fa-heart"></i>
+                    <span>Exercises</span>
+                </li>
+                <div class="res">
+                    <li data-page="resources">
+                        <i class="fas fa-book-medical"></i>
+                        <span>Resources</span>
+                    </li>
+                </div>
+                
+            </ul>
+            <div class="emergency-support">
+                <button class="sos-btn">
+                    <i class="fas fa-phone"></i>
+                    Emergency Support
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content">
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <h1>How are you feeling today?</h1>
+                <div class="mood-selector">
+                    <div class="mood-option" data-mood="great">
+                        <i class="fas fa-laugh"></i>
+                        <span>Great</span>
+                    </div>
+                    <div class="mood-option" data-mood="good">
+                        <i class="fas fa-smile"></i>
+                        <span>Good</span>
+                    </div>
+                    <div class="mood-option" data-mood="okay">
+                        <i class="fas fa-meh"></i>
+                        <span>Okay</span>
+                    </div>
+                    <div class="mood-option" data-mood="bad">
+                        <i class="fas fa-frown"></i>
+                        <span>Bad</span>
+                    </div>
+                    <div class="mood-option" data-mood="awful">
+                        <i class="fas fa-sad-tear"></i>
+                        <span>Awful</span>
+                    </div>
+                    
+                </div>
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-cards">
+                        <div class="action-card">
+                            <i class="fas fa-lungs"></i>
+                            <h3><a href="breathing.html">Breathing Exercise</a></h3>
+                            <p>Take a moment to breathe</p>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-brain"></i>
+                            <h3><a href="guided meditation.html">Meditation</a></h3>
+                            <p>Clear your mind</p>
+                        </div>
+                        <div class="action-card">
+                            <i class="fas fa-journal-whills"></i>
+                            <h3>Journal</h3>
+                            <p>Write your thoughts</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chat Support Page-->
+            <!-- <section id="chat" class="page">
+                <div class="chat-container">
+                    <div id="chatMessages" class="chat-messages">
+                        <div class="message bot">
+                            Hello! I'm here to listen and support you. How can I help today?
+                        </div>
+                    </div> -->
+                    <!-- <div id="chat" class="section page">
+                        <div class="chat-section">
+                            <h2>Chat Support</h2>
+                            <div class="chat-container">
+                                <div id="chat-loading" class="loading">
+                                    <p>Loading chat...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div id="chat" class="section page">
+                        <div class="chat-section">
+                          <h2>Chat Support</h2>
+                          <div class="chat-container">
+                            <div id="chat-loading" class="loading">
+                              Loading chat...
+                            </div>
+                          </div>
+                        </div>
+                    <div class="chat-input">
+                        <textarea placeholder="Type your message here..." id="messageInput"></textarea>
+                        <button id="sendMessage">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+        
+                <script src="botpress-chat.js"></script>
+            </section> 
+
+            <!-- Mood Tracker Page -->
+            <section id="mood-tracker" class="page">
+                <div>
+                <h2>Your Mood History</h2>
+                <div class="mood-chart">
+                    <canvas id="moodChart"></canvas>
+                </div>
+                <div class="mood-insights">
+                    <div class="insight-cards" id="moodInsights">
+                        <!-- Dynamically populated by JavaScript -->
+                        </div>
+                </div>
+            </div>
+            <h3>Weekly Insights</h3>
+            </section>
+           
+
+            <!-- Exercises Page -->
+            <section id="exercises" class="page">
+                <h2>Mindfulness Exercises</h2>
+                <div class="exercise-grid">
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <i class="fas fa-lungs"></i>
+                            <h3>Deep Breathing</h3>
+                        </div>
+                        <p>5-minute breathing exercise</p>
+                        <button class="start-exercise"><a href="breathing.html" style="text-decoration:none; color: white;">Start</a></button>
+                       
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Body Scan</h3>
+                        </div>
+                        <p>10-minute relaxation</p>
+                        <button class="start-exercise"><a href="bodyscan.html" style="text-decoration:none; color:white;">Start</a></button>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <i class="fas fa-om"></i>
+                            <h3>Guided Meditation</h3>
+                        </div>
+                        <p>15-minute session</p>
+                        <button class="start-exercise"><a href="guided meditation.html" style="text-decoration:none; color:white;">Start</a></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+<!-- </div>
+</div> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize Botpress with custom configuration
+        window.botpressWebChat.init({
+            // Custom configuration for integrated view
+            containerEl: document.getElementById('chat-container'),
+            hideWidget: true, // Hide the default floating button
+            disableAnimations: true,
+            showConversationDescription: false,
+            showUserAvatar: false,
+            enableReset: false,
+            enableTranscriptDownload: false,
+            enableConversationDeletion: false,
+            stylesheet: `
+                :root {
+                    --main-bg-color: transparent;
+                    --chat-bg-color: transparent;
+                    --chat-border-color: transparent;
+                }
+                .bpw-layout {
+                    width: 100% !important;
+                    height: 100% !important;
+                    border-radius: 8px !important;
+                }
+                .bpw-header-container {
+                    border-top-left-radius: 8px !important;
+                    border-top-right-radius: 8px !important;
+                }
+                .bpw-date-container {
+                    background: transparent !important;
+                }
+            `
+        });
+    </script>
+</body>
+</html>

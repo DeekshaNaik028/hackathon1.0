@@ -1,0 +1,114 @@
+/* Exercise Page Styles */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f0f8f3;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.content {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+#exercise-title {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#exercise-container {
+    text-align: center;
+}
+
+#timer-container {
+    margin-bottom: 2rem;
+}
+
+#timer-circle {
+    transition: stroke-dashoffset 1s linear;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+#timer-text {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+#audio-controls {
+    margin-top: 2rem;
+}
+
+#volume-slider {
+    width: 200px;
+    margin: 0 auto;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    #exercise-title {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#exercise-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Custom styles for each exercise type */
+body.bodyscan { background-color: #e8f4f8; }
+body.breathing { background-color: #e8f8f0; }
+body.meditation { background-color: #f0e8f8; }
+
+.bodyscan #exercise-title { color: #2980b9; }
+.breathing #exercise-title { color: #27ae60; }
+.meditation #exercise-title { color: #8e44ad; }
